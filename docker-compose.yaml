@@ -3,6 +3,15 @@
 # docker-compose stop
 version: '3'
 services:
+  
+  db-service:
+    image: vdigital/mysql:5.6
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=g0th@m
+      - MYSQL_DATABASE=OPENHEALTH
+
   frontend:
     image: vdigital/phpmicro:dev
     volumes:
