@@ -1,4 +1,5 @@
 .DS_Store
+src/dist
 src/node_modules
 src/.babelrc
 src/.DS_Store
