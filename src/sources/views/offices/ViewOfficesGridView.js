@@ -12,7 +12,8 @@ export class ViewOfficesGridView extends DHXView{
     this.ui.setColTypes("ro,ro,ro,ro,ro,ro,ro");
 
     this.ui.init();
-		this._load();
+		//this._load();
+		this.ui.loadXML("xml/view_dr_office.php");
 	}
 
 	_load() {
@@ -24,5 +25,5 @@ export class ViewOfficesGridView extends DHXView{
 			};
 		this.ui.parse(struct,"json");
 	}
-	
+
 }
