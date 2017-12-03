@@ -1,0 +1,16 @@
+# docker-compose.yaml
+# docker-compose up -d
+# docker-compose stop
+version: '3'
+services:
+  frontend:
+    image: vdigital/phpmicro:dev
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      - DB_HOST=db-service
+      - DB_NAME=OPENHEALTH
+      - DB_USER=root
+      - DB_PASS=g0th@m
+    ports:
+      - 8080:80
