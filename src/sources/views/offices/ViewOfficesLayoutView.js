@@ -16,6 +16,8 @@ export class ViewOfficesLayoutView extends DHXView {
     this.show(ViewOfficesGridView, this.ui.cells("a"));
     this.show(ViewOfficesFormView, this.ui.cells("b"));
 
+    this._init();
+
 
     //Toolbar Event Handler
     this.attachEvent("ViewOfficesToolbarClick", (id) => {
@@ -30,6 +32,10 @@ export class ViewOfficesLayoutView extends DHXView {
 
     });
 
+  }
+
+  _init() {
+    ViewOfficesFormView.bind(ViewOfficesGridView);
   }
 
 }
