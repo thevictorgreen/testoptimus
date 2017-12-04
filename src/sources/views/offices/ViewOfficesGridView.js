@@ -17,7 +17,13 @@ export class ViewOfficesGridView extends DHXView{
 		var dp = new dataProcessor("xml/view_dr_office.php");
 		dp.setTransactionMode("REST");
 		dp.init(this.ui);
-		
+
+		this.addService("OfficesGrid", {
+			getGrid:() => this.ui
+		});
+
+		//console.log(this.ui);
+
 	}
 
 	_load() {
