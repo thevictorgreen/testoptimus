@@ -10,7 +10,14 @@ export class ViewOfficesFormView extends DHXView{
 
 		var mygrid = this.app.getService("OfficesGrid").getGrid();
 		this.ui.bind(mygrid);
-		//console.log(mygrid);
+
+		this.ui.attachEvent("onButtonClick",function(id){
+			if (id == "submit") {
+				this.ui.save();
+				console.log("data saved");
+			}
+		});
+
 	}
 
 	_load() {
