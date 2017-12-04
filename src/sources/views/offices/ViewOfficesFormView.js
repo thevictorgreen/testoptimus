@@ -15,7 +15,8 @@ export class ViewOfficesFormView extends DHXView{
 
 		this.ui.attachEvent("onButtonClick",function(id){
 			if (id == "submit") {
-				form.save();
+				//form.save();
+				console.log(form);			
 			}
 		});
 
