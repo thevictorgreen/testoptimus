@@ -1,10 +1,12 @@
 import {DHXView} from "dhx-optimus";
+import {ViewOfficesGridView} from "views/offices/ViewOfficesGridView.js";
 
 
 export class ViewOfficesFormView extends DHXView{
 
 	render(){
 		this.ui = this.root.attachForm({});
+		this.ui.bind(ViewOfficesGridView);
 		this._load();
 	}
 
