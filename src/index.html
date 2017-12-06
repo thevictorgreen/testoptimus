@@ -34,7 +34,21 @@
 <body>
 
 	<script type="text/javascript">
-		 new MyApp({}).render();
+	 //FIX AJAX ISSUE
+	 if(!window.dhtmlxAjax){
+		 window.dhtmlxAjax = {
+			 post: function(url, data, callback){
+				 return dhx4.ajax.post(url, data, callback);
+			 },
+			 get: function(url, callback){
+				 return dhx4.ajax.get(url, callback);
+			 }
+		 };
+	 }
+	 //FIX AJAX ISSUE
+
+	 //Entry Point
+	 new MyApp({}).render();
 	</script>
 
 </body>

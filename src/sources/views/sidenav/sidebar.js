@@ -15,7 +15,7 @@ export class SidebarView extends DHXView{
 				{
 					id:"officeMainBtn",
 					text: "DR OFFICES",
-					selected: true
+					selected: false
 				},
 				{
 					type:"separator"

@@ -1,6 +1,5 @@
 import {DHXView} from "dhx-optimus";
-import {ViewOfficesGridView} from "views/offices/ViewOfficesGridView.js";
-
+//import {ViewOfficesGridView} from "views/offices/ViewOfficesGridView.js";
 
 export class ViewOfficesFormView extends DHXView{
 

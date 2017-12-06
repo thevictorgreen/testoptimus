@@ -1,0 +1,79 @@
+MULTICHAIN
+
+[Installation]
+
+wget https://www.multichain.com/download/multichain-1.0.2.tar.gz
+tar -xvzf multichain-1.0.2.tar.gz
+mv multichain-1.0.2/multichaind multichain-1.0.2/multichain-cli multichain-1.0.2/multichain-util /usr/local/bin
+
+
+[Creating a blockchain]
+
+-create
+ multichain-util create chain1
+
+-view settings
+ cat ~/.multichain/chain1/params.dat
+
+-initialize
+ multichaind chain1 -daemon
+
+-to connect other nodes
+ multichaind chain1@138.197.95.172:2917
+ multichaind chain1@10.17.0.7:2917
+
+
+[Connecting to a blockchain]
+
+-on other server run
+ multichaind chain1@138.197.95.172:2917
+
+-on original server run
+ multichain-cli chain1 grant 1RzdENWKjsP6J6z3S1dybPvanCAe63HdAYPiVY connect
+ multichain-cli chain1 grant 1RzdENWKjsP6J6z3S1dybPvanCAe63HdAYPiVY connect,send,receive
+
+-now try to connect again on second server
+ multichaind chain1 -daemon
+
+
+[Interactive mode]
+
+-cli access
+ multichain-cli chain1
+
+-commands
+ getinfo
+ help
+ getnewaddress
+ getaddresses
+ getblockchainparams
+ getpeerinfo
+
+
+ [Writing data to blockchain via streams]
+
+ -can only be written to by those with explicit permissions
+ create stream stream1 false
+
+ -list permissions
+ listpermissions stream1.*
+
+ -publish something to the stream
+ publish stream1 key1 73747265616d2064617461
+
+ -view all streams we have access to
+ liststreams
+
+ -suscribe to the stream
+ subscribe stream1
+ liststreams
+
+ -grant permissions on stream from authoritative server
+ grant 1RzdENWKjsP6J6z3S1dybPvanCAe63HdAYPiVY receive,send
+ grant 1RzdENWKjsP6J6z3S1dybPvanCAe63HdAYPiVY stream1.write
+
+ -query stream
+ liststreamitems stream1
+ liststreamkeys stream1
+ liststreamkeyitems stream1 key1
+ liststreampublishers stream1
